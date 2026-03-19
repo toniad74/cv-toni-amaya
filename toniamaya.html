@@ -324,8 +324,13 @@ function descargarPDF() {
     const opt = {
         margin: 0,
         filename: 'CV_Toni_Amaya.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
+        image: { type: 'jpeg', quality: 0.99 },
+        html2canvas: { 
+            scale: 2, 
+            useCORS: true,
+            width: element.scrollWidth,
+            windowWidth: element.scrollWidth
+        },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
     };
     html2pdf().set(opt).from(element).save().then(() => {
