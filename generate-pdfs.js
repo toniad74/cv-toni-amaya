@@ -27,8 +27,10 @@ const server = http.createServer((req, res) => {
 const PORT = 3456;
 
 const files = [
-  { html: 'toniamaya.html',   pdf: 'toniamaya.pdf' },
-  { html: 'toni-amaya.html',  pdf: 'toni-amaya.pdf' },
+  { html: 'toniamaya.html',       pdf: 'toniamaya.pdf' },
+  { html: 'toni-amaya.html',      pdf: 'toni-amaya.pdf' },
+  { html: 'toniamaya-cat.html',   pdf: 'toniamaya-cat.pdf' },
+  { html: 'toni-amaya-cat.html',  pdf: 'toni-amaya-cat.pdf' },
 ];
 
 (async () => {

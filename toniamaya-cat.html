@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<title>CV Toni Amaya Dimanuel</title>
+<style>
+/* CSS Reset and basic styling */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    background: #e9ecef; 
+    color: #333; 
+    line-height: 1.4; 
+}
+.a4 { 
+    width: 210mm; 
+    height: 297mm; 
+    background: #fff; 
+    margin: 20px auto; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+    display: flex; 
+    overflow: hidden; 
+}
+.left { 
+    width: 32%; 
+    background: #2b303a; 
+    color: #f8f9fa; 
+    padding: 30px 20px; 
+    display: flex; 
+    flex-direction: column; 
+}
+.right { 
+    width: 68%; 
+    padding: 35px 35px; 
+    display: flex; 
+    flex-direction: column; 
+}
+.photo-container { 
+    text-align: center; 
+    margin-bottom: 25px; 
+}
+.photo-container img { 
+    width: 160px; 
+    height: 160px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    object-position: center 15%;
+    border: 4px solid #f8f9fa; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.section-title-left { 
+    text-transform: uppercase; 
+    font-size: 13px; 
+    font-weight: bold; 
+    border-bottom: 2px solid #00a8cc; 
+    padding-bottom: 5px; 
+    margin-bottom: 12px; 
+    margin-top: 25px; 
+    letter-spacing: 1.5px; 
+}
+.section-title-right { 
+    text-transform: uppercase; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #2b303a; 
+    border-bottom: 2px solid #00a8cc; 
+    padding-bottom: 5px; 
+    margin-bottom: 15px; 
+    margin-top: 25px; 
+    letter-spacing: 1.5px; 
+}
+.contact-info, .skills-list, .lang-list, .edu-list { 
+    list-style: none; 
+    font-size: 12px; 
+}
+.contact-info li, .skills-list li, .lang-list li, .edu-list li { 
+    margin-bottom: 10px; 
+}
+.contact-info i { 
+    width: 20px; 
+    text-align: center; 
+    margin-right: 8px; 
+    color: #00a8cc; 
+    font-size: 14px;
+}
+.contact-info a { 
+    color: #f8f9fa; 
+    text-decoration: none; 
+}
+h1 { 
+    font-size: 30px; 
+    line-height: 1.1; 
+    margin-bottom: 8px; 
+    color: #2b303a; 
+    letter-spacing: -0.5px; 
+    text-transform: uppercase;
+}
+.subtitle { 
+    font-size: 13px; 
+    color: #00a8cc; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5px;
+}
+.profile-text { 
+    font-size: 12px; 
+    text-align: justify; 
+    margin-bottom: 5px; 
+    color: #495057;
+}
+.exp-item { 
+    margin-bottom: 14px; 
+}
+.exp-header { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: baseline; 
+    margin-bottom: 3px; 
+}
+.exp-company { 
+    font-size: 13px; 
+    font-weight: bold; 
+    color: #2b303a; 
+}
+.exp-date { 
+    font-size: 11px; 
+    color: #6c757d; 
+    font-weight: 600; 
+    white-space: nowrap; 
+}
+.exp-desc { 
+    font-size: 12px; 
+    color: #495057; 
+}
+.exp-desc-list { 
+    font-size: 12px; 
+    margin-left: 15px; 
+    color: #495057; 
+}
+.exp-desc-list li { 
+    margin-bottom: 3px; 
+}
+.cert-list { 
+    font-size: 12px; 
+    color: #495057; 
+    column-count: 2; 
+    column-gap: 20px; 
+    list-style-type: disc; 
+    margin-left: 15px; 
+}
+.cert-list li { 
+    margin-bottom: 5px; 
+    break-inside: avoid; 
+}
+
+/* Botó PDF */
+.pdf-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #00a8cc;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,168,204,0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 999;
+}
+.pdf-btn:hover { background: #0090b0; transform: scale(1.05); }
+.share-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 195px;
+    background: #2b303a;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 999;
+    text-decoration: none;
+}
+.share-btn:hover { background: #1a1e25; transform: scale(1.05); }
+.share-toast {
+    position: fixed;
+    bottom: 85px;
+    right: 195px;
+    background: #333;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+/* Optimitzacions d'impressió */
+@media print {
+    body { background: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .a4 { margin: 0; box-shadow: none; width: 210mm; height: 297mm; page-break-after: avoid; }
+    .pdf-btn { display: none; }
+    .share-btn { display: none; }
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<div class="a4">
+    <!-- COLUMNA ESQUERRA -->
+    <div class="left">
+        <div class="photo-container">
+            <img src="foto_perfil.jpg" alt="Toni Amaya Dimanuel">
+        </div>
+        
+        <div class="section-title-left">Contacte</div>
+        <ul class="contact-info">
+            <li><i class="fas fa-envelope"></i> toniad74@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +34 609 289 436</li>
+            <li><i class="fas fa-map-marker-alt"></i> Barcelona, Espanya</li>
+            <li><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/toni-amaya-dimanuel-b7195041" target="_blank">LinkedIn</a></li>
+        </ul>
+
+        <div class="section-title-left">Aptituds i Skills</div>
+        <ul class="skills-list">
+            <li><strong>Producció i Emissió:</strong> Broadcast, Continuïtat, VTRs, Operativa EVS, vMix.</li>
+            <li><strong>Planificació:</strong> Schedule Management i coordinació d'emissions.</li>
+            <li><strong>Edició i Postproducció:</strong> Adobe Premiere, After Effects, Final Cut Pro, Avid MediaComposer, Photoshop.</li>
+            <li><strong>Intel·ligència Artificial:</strong> IAs generatives com a suport creatiu per a imatge i vídeo.</li>
+            <li><strong>RRSS i Streaming:</strong> Responsable de la imatge corporativa i retransmissions en directe del Club Handbol Molins.</li>
+        </ul>
+
+        <div class="section-title-left">Idiomes</div>
+        <ul class="lang-list">
+            <li><strong>Castellà:</strong> Nadiu</li>
+            <li><strong>Català:</strong> Nadiu</li>
+            <li><strong>Anglès:</strong> Intermedi</li>
+        </ul>
+
+        <div class="section-title-left">Formació Acadèmica</div>
+        <ul class="edu-list">
+            <li><strong>Tècnic Superior en Realització, Producció i Operació (Imatge i So)</strong><br>EMAV (1993 - 1994)</li>
+        </ul>
+    </div>
+
+    <!-- COLUMNA DRETA -->
+    <div class="right">
+        <h1>Toni Amaya Dimanuel</h1>
+        <div class="subtitle">Responsable d'Emissions i Schedule Manager | Postproductor Audiovisual</div>
+        
+        <div class="section-title-right">Perfil Professional</div>
+        <div class="profile-text">
+            Professional audiovisual amb més de 25 anys d'experiència en televisió i broadcast. Especialista consolidat en la gestió tècnica de canals, continuïtat i planificació d'emissions (Responsable d'Emissions i Schedule Planner), recolzat per una sòlida base tècnica i creativa com a editor i postproductor de vídeo. Perfil tecnològic i versàtil que integra l'àmplia trajectòria televisiva amb coneixements pràctics en Intel·ligència Artificial per optimitzar processos i continguts visuals.
+        </div>
+
+        <div class="section-title-right">Experiència Laboral</div>
+        
+        <div class="exp-item">
+            <div class="exp-header">
+                <div class="exp-company">GRUP MEDIAPRO</div>
+                <div class="exp-date">maig 2012 - Actualitat</div>
+            </div>
+            <ul class="exp-desc-list">
+                <li><strong>Responsable d'Emissions GolStadium</strong> (jul. 2024 - act.)</li>
+                <li><strong>Schedule Planner:</strong> LaLiga TV Int., LaLiga TV BAR, LaLiga 123 TV, Canal F1 Latin America (nov. 2016 - jul. 2024)</li>
+                <li><strong>Schedule Manager:</strong> OneSoccer (abr. 2019 - abr. 2020)</li>
+                <li><strong>Broadcast Controller ELEVEN SPORTS NETWORK:</strong> jul. 2015 - nov. 2016</li>
+                <li><strong>Broadcast Controller FOX SPORTS EUROPE:</strong> des. 2013 - jul. 2015</li>
+                <li><strong>Tècnic / Coordinador de Continuïtat:</strong> GOLT (maig 2012 - oct. 2013)</li>
+            </ul>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div class="exp-company">XARXA AUDIOVISUAL LOCAL (XAL)</div>
+                <div class="exp-date">jul. 2011 - feb. 2012</div>
+            </div>
+            <div class="exp-desc">Tècnic de Continuïtat i Ingesta.</div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div class="exp-company">TEUVE</div>
+                <div class="exp-date">set. 2007 - set. 2010</div>
+            </div>
+            <div class="exp-desc">Tècnic de Postproducció de vídeo i muntatge de peces en entorns AVID MediaComposer.</div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div class="exp-company">FUNITEC (LA SALLE)</div>
+                <div class="exp-date">set. 2007 - set. 2010</div>
+            </div>
+            <div class="exp-desc">Realitzador tècnic del sorteig de Loto 6/49 emès a TV3.</div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div class="exp-company">BARCELONA TV (betevé)</div>
+                <div class="exp-date">feb. 2004 - set. 2010</div>
+            </div>
+            <div class="exp-desc">Operador de càmera en plató per al programa central "LA TARDA" (BTV).</div>
+        </div>
+
+        <div class="exp-item">
+            <div class="exp-header">
+                <div class="exp-company">MEDIAPARK S.A.</div>
+                <div class="exp-date">maig 1998 - ago. 2007</div>
+            </div>
+            <div class="exp-desc">Tècnic de Continuïtat íntegra per a 10 canals temàtics (Vía Digital), operant VTR per a informatius (Tele5) i compaginant-ho com a Tècnic de Postproducció (AVID).</div>
+        </div>
+
+        <div class="section-title-right">Certificacions Complementàries</div>
+        <ul class="cert-list">
+            <li>Final Cut Pro &amp; Motion</li>
+            <li>Adobe Photoshop Avançat</li>
+            <li>Postproducció de Vídeo Online</li>
+            <li>Nous Formats de Vídeo</li>
+            <li>Tractament Digital Img i So</li>
+            <li>3D MAX, Softimage i Cinema 4D</li>
+            <li>Operador EVS</li>
+            <li>Realització i Interpretació TV</li>
+        </ul>
+
+    </div>
+</div>
+
+<a class="pdf-btn" href="toniamaya-cat.pdf" download="CV_Toni_Amaya_CA.pdf">
+    <i class="fas fa-file-pdf"></i> Descarregar PDF
+</a>
+
+<button class="share-btn" onclick="compartir()">
+    <i class="fas fa-share-alt"></i> Compartir
+</button>
+<div class="share-toast" id="toast">Enllaç copiat!</div>
+
+<script>
+async function compartir() {
+    const url = window.location.href;
+    const titol = 'CV Toni Amaya Dimanuel';
+    if (navigator.share) {
+        await navigator.share({ title: titol, url: url });
+    } else {
+        await navigator.clipboard.writeText(url);
+        const toast = document.getElementById('toast');
+        toast.style.opacity = '1';
+        setTimeout(() => toast.style.opacity = '0', 2000);
+    }
+}
+</script>
+
+</body>
+</html>

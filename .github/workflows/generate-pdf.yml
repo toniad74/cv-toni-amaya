@@ -6,6 +6,8 @@ on:
     paths:
       - 'toniamaya.html'
       - 'toni-amaya.html'
+      - 'toniamaya-cat.html'
+      - 'toni-amaya-cat.html'
 
 jobs:
   generate-pdfs:
