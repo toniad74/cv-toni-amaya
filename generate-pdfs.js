@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-core');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -38,6 +38,7 @@ const files = [
   console.log(`Servidor local en puerto ${PORT}`);
 
   const browser = await puppeteer.launch({
+    executablePath: process.env.CHROME_PATH || '/usr/bin/google-chrome',
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 

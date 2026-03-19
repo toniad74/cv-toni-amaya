@@ -6,6 +6,6 @@
     "generate-pdfs": "node generate-pdfs.js"
   },
   "dependencies": {
-    "puppeteer": "^21.0.0"
+    "puppeteer-core": "^22.0.0"
   }
 }
