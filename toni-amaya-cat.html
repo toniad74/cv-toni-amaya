@@ -286,6 +286,32 @@
             pointer-events: none;
         }
 
+        .lang-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #1e293b;
+            color: #06b6d4;
+            border: 1px solid #06b6d4;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s, transform 0.2s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        .lang-btn:hover { background: #0f172a; transform: scale(1.05); }
+
+        @media (max-width: 800px) {
+            .lang-btn { top: 10px; right: 10px; padding: 6px 12px; font-size: 12px; }
+        }
+
         @media print {
             body {
                 background: none;
@@ -394,6 +420,10 @@
 </head>
 
 <body>
+    <a href="toni-amaya.html" class="lang-btn">
+        <i class="fas fa-globe"></i> Versión en Castellano
+    </a>
+
     <div class="a4">
         <!-- COLUMNA ESQUERRA -->
         <div class="left-sidebar">
