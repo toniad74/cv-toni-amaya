@@ -1,0 +1,11 @@
+{
+  "name": "cv-toni-amaya",
+  "version": "1.0.0",
+  "description": "CV Toni Amaya - PDF generator",
+  "scripts": {
+    "generate-pdfs": "node generate-pdfs.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  }
+}

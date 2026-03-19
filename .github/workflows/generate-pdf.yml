@@ -1,0 +1,35 @@
+name: Generar PDFs automáticamente
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'toniamaya.html'
+      - 'toni-amaya.html'
+
+jobs:
+  generate-pdfs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Generar PDFs con Puppeteer
+        run: node generate-pdfs.js
+
+      - name: Subir PDFs al repositorio
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Actions Bot"
+          git add toniamaya.pdf toni-amaya.pdf
+          git diff --staged --quiet || git commit -m "Auto: actualizar PDFs generados"
+          git push
