@@ -169,9 +169,32 @@ body {
     font-size: 10px;
 }
 
+/* Botón PDF */
+.pdf-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #06b6d4;
+    color: #0b1120;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(6,182,212,0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 999;
+}
+.pdf-btn:hover { background: #22d3ee; transform: scale(1.05); }
+
 @media print {
     body { background: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .a4 { margin: 0; box-shadow: none; width: 210mm; height: 297mm; }
+    .pdf-btn { display: none; }
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -301,5 +324,10 @@ body {
 
     </div>
 </div>
+
+<button class="pdf-btn" onclick="window.print()">
+    <i class="fas fa-file-pdf"></i> Descargar PDF
+</button>
+
 </body>
 </html>
