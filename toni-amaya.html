@@ -231,6 +231,35 @@ body {
     body { background: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .a4 { margin: 0; box-shadow: none; width: 210mm; height: 297mm; }
     .pdf-btn { display: none; }
+    .share-btn { display: none; }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 800px) {
+    body { padding: 10px; background: #0f172a; }
+    .a4 { 
+        width: 100%; 
+        height: auto; 
+        margin: 0; 
+        box-shadow: none; 
+        flex-direction: column; 
+    }
+    .left-sidebar { width: 100%; padding: 20px; border-right: none; border-bottom: 2px solid #06b6d4; }
+    .main-content { width: 100%; padding: 20px; }
+    .pdf-btn, .share-btn {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 15px auto;
+        width: 240px;
+        justify-content: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .share-toast {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 80px;
+    }
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
