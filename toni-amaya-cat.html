@@ -241,12 +241,22 @@ body {
     .a4 { 
         width: 100%; 
         height: auto; 
-        margin: 0; 
+        margin: 0 auto 20px auto; 
         box-shadow: none; 
-        flex-direction: column; 
+        display: flex;
+        flex-direction: row; 
     }
-    .left-sidebar { width: 100%; padding: 20px; border-right: none; border-bottom: 2px solid #06b6d4; }
-    .main-content { width: 100%; padding: 20px; }
+    .left-sidebar { width: 35%; padding: 15px; border-right: 2px solid #06b6d4; }
+    .main-content { width: 65%; padding: 15px 20px; }
+
+    /* Escalado CAT Dark */
+    .name-header h1 { font-size: 20px; }
+    .name-header .subtitle { font-size: 10px; }
+    .profile-txt, .tl-desc, .tl-company, .sb-desc, .contact-list { font-size: 9px; }
+    .tl-title { font-size: 11px; }
+    .photo-area img { width: 80px; height: 80px; }
+    .section-head { font-size: 11px; margin-top: 15px; }
+
     .pdf-btn, .share-btn {
         position: relative;
         bottom: auto;
@@ -255,6 +265,7 @@ body {
         width: 250px;
         justify-content: center;
         box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        display: flex;
     }
     .share-toast {
         right: 50%;

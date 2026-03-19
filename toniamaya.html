@@ -222,16 +222,28 @@ h1 {
 
 /* Mobile adjustments */
 @media screen and (max-width: 800px) {
-    body { padding: 10px; background: #fff; }
+    body { padding: 10px; background: #e9ecef; }
     .a4 { 
         width: 100%; 
         height: auto; 
-        margin: 0; 
-        box-shadow: none; 
-        flex-direction: column; 
+        margin: 0 auto 20px auto; 
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        display: flex; /* Mantener las dos columnas */
+        flex-direction: row; 
     }
-    .left { width: 100%; padding: 20px; }
-    .right { width: 100%; padding: 20px; }
+    .left { width: 32%; padding: 15px 10px; min-width: 32%; }
+    .right { width: 68%; padding: 15px 15px; }
+    
+    /* Escalado de textos para que quepan bien en dos columnas en móvil */
+    h1 { font-size: 18px; }
+    .subtitle { font-size: 10px; }
+    .profile-text, .exp-desc, .exp-desc-list, .cert-list, .contact-info, .skills-list, .lang-list, .edu-list { 
+        font-size: 9px; 
+    }
+    .section-title-right { font-size: 12px; margin-top: 15px; }
+    .section-title-left { font-size: 10px; margin-top: 15px; }
+    .photo-container img { width: 80px; height: 80px; }
+
     .pdf-btn, .share-btn {
         position: relative;
         bottom: auto;
@@ -240,6 +252,7 @@ h1 {
         width: 220px;
         justify-content: center;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: flex;
     }
     .share-toast {
         right: 50%;
