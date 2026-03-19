@@ -198,6 +198,7 @@ body {
 }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
 <div class="a4">
@@ -325,9 +326,27 @@ body {
     </div>
 </div>
 
-<button class="pdf-btn" onclick="window.print()">
+<button class="pdf-btn" onclick="descargarPDF()">
     <i class="fas fa-file-pdf"></i> Descargar PDF
 </button>
+
+<script>
+function descargarPDF() {
+    const btn = document.querySelector('.pdf-btn');
+    btn.style.display = 'none';
+    const element = document.querySelector('.a4');
+    const opt = {
+        margin: 0,
+        filename: 'CV_Toni_Amaya_Dark.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
+    html2pdf().set(opt).from(element).save().then(() => {
+        btn.style.display = 'flex';
+    });
+}
+</script>
 
 </body>
 </html>
